@@ -31,8 +31,9 @@ Urgency: ${urgency}
 Thank you,
 [YOUR NAME AND GRADE]`;
 
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(counselorEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // MAILTO link (opens the default email app)
+  const mailtoLink = `mailto:${encodeURIComponent(counselorEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  // Open in the same tab to avoid popup blockers
-  window.location.href = gmailUrl;
+  // Open without popups — just navigate
+  window.location.href = mailtoLink;
 }
